@@ -1,0 +1,58 @@
+
+
+
+
+
+<html>
+    <head>
+        <script src="//cdn.amcharts.com/lib/4/core.js"></script>
+        <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
+    </head>
+    <body>
+        <div id="chartdiv" style="width: 900px; height: 800px"></div>
+
+    </body>
+    <script>
+        var chart = am4core.create("chartdiv", am4charts.PieChart);
+        var series = chart.series.push(new am4charts.PieSeries());
+        series.dataFields.value = "litres";
+        series.dataFields.category = "country";
+        series.slices.template.tooltipText = "Category: {country}\nValue: {litres}";
+        // series.tooltip.getFillFromObject = false;
+        // series.tooltip.background.fill = am4core.color("#fff");
+        // series.tooltip.label.fill = am4core.color("#000");
+        // series.tooltip.draggable = true;
+        
+        chart.data = [
+        {
+  "country": "Lithuania",
+  "litres": 501.9
+}, {
+  "country": "Czech Republic",
+  "litres": 301.9
+}, {
+  "country": "Ireland",
+  "litres": 201.1
+}, {
+  "country": "Germany",
+  "litres": 165.8
+}, {
+  "country": "Australia",
+  "litres": 139.9
+}, {
+  "country": "Austria",
+  "litres": 128.3
+}, {
+  "country": "UK",
+  "litres": 99
+}, {
+  "country": "Belgium",
+  "litres": 60
+}, {
+  "country": "The Netherlands",
+  "litres": 50
+}
+        ];
+        chart.legend = new am4charts.Legend();
+      </script>
+</html>
